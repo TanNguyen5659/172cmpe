@@ -39,13 +39,13 @@ export default function AddFlight() {
   const classes = useStyles();
   const [firstLoad, setLoad] = React.useState(true);
 
-  const [selectedDate, setSelectedDate] = React.useState("");
+  const [dob, setSelectedDate] = React.useState("");
   const [name, setName] = React.useState("");
   const [department, setDepartment] = React.useState("");
   const [gender, setGender] = React.useState("");
 
-  const handleDateChange = date => {setSelectedDate(date);
-  console.log("check date: ",date)}
+  const handleDateChange = event => {setSelectedDate(event.target.value);
+  console.log("check date: ",event.target.value)}
   const handleNameChange = event => setName(event.target.value);
   const handlDepartmentChange = event => setDepartment(event.target.value);
   const handleGenderChange = event => setGender(event.target.value);
@@ -72,7 +72,7 @@ export default function AddFlight() {
   }
 
   const handleSubmit = variables => {
-    const toInput = { name, department, gender, dob: selectedDate };
+    const toInput = { name, department, gender, dob };
     sampleFunc(toInput);
     setName("");
     setDepartment("");
@@ -103,13 +103,13 @@ export default function AddFlight() {
                 fullWidth
                 id="name"
                 value={name}
-                label="Name"
+                label="Flight Number"
                 name="name"
                 autoComplete="name"
                 onChange={handleNameChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 autoComplete="department"
                 name="department"
@@ -118,27 +118,40 @@ export default function AddFlight() {
                 fullWidth
                 value={department}
                 id="department"
-                label="Department"
+                label="Destination"
                 onChange={handlDepartmentChange}
               />
             </Grid>
-            <Grid item xs={12} sm={6}>
+            <Grid item xs={12}>
               <TextField
                 variant="outlined"
                 required
                 fullWidth
                 id="gender"
                 value={gender}
-                label="Gender"
+                label="Time"
                 name="gender"
-                autoComplete="gender"
+                // autoComplete="gender"
+                onChange={handleGenderChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="status"
+                value={gender}
+                label="Status"
+                name="status"
+                // autoComplete="gender"
                 onChange={handleGenderChange}
               />
             </Grid>
             <Grid item xs={12}>
               <TextField
                 id="date"
-                label="Date of birth"
+                label="Date"
                 type="date"
                 defaultValue="2020-11-20"
                 className={classes.textField}
