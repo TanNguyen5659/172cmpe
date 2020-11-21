@@ -82,8 +82,8 @@ export default function SimpleTable() {
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
+                <TableCell align="center">Airline</TableCell>
                 <TableCell align="center">Flight Number</TableCell>
-                <TableCell align="center">Time</TableCell>
                 <TableCell align="center">Destination</TableCell>
                 <TableCell align="center">Status</TableCell>
               </TableRow>
