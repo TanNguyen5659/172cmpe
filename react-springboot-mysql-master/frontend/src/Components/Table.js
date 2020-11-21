@@ -53,6 +53,7 @@ export default function SimpleTable() {
     let response = await fetch("/api/flight");
     let body = await response.json();
     upDateData(body);
+    console.log(body);
   }
 
   if (firstLoad) {
@@ -68,7 +69,7 @@ export default function SimpleTable() {
         <GroupIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Flight Directory
+        Today Flight Departure
       </Typography>
 
       {isLoading ? (
@@ -81,10 +82,10 @@ export default function SimpleTable() {
           <Table className={classes.table} aria-label="simple table">
             <TableHead>
               <TableRow>
-                <TableCell align="center">Name</TableCell>
-                <TableCell align="center">Department</TableCell>
-                <TableCell align="center">Gender</TableCell>
-                <TableCell align="center">Dob</TableCell>
+                <TableCell align="center">Flight Number</TableCell>
+                <TableCell align="center">Time</TableCell>
+                <TableCell align="center">Destination</TableCell>
+                <TableCell align="center">Status</TableCell>
               </TableRow>
             </TableHead>
             <TableBody>
@@ -103,7 +104,7 @@ export default function SimpleTable() {
       <Link className={classes.link} to="/">
         {" "}
         <Typography align="left">
-          &#x2190; Head back to save data
+          &#x2190; Add new flight
         </Typography>{" "}
       </Link>
     </div>
