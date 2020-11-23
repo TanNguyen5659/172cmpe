@@ -1,6 +1,6 @@
 package com.mukundmadhav.springboot.springboot.modal;
 
-import java.sql.Date;
+import java.time.LocalDateTime;
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -16,64 +16,86 @@ public class Flight {
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	@Column
-	private Integer id;
+	private String flightNumber; //flight number
 
 	@Column
-	private String name;
+	private String airline; //airline
 
 	@Column
-	private String department;
+	private String arrival;
 
 	@Column
-	private Date dob;
+	private String departure;
 
 	@Column
-	private String gender;
+	private LocalDateTime arrivalTime;
+
+	@Column
+	private LocalDateTime departureTime;
+
+	@Column
+	private String status;
 
 	@Override
 	public String toString() {
-		return "Flight [id=	" + id + ", name=" + name + ", department=" + department + ", dob=" + dob + ", gender="
-				+ gender + "]";
+		return "Flight [flightNumber=" + flightNumber + ", airline=" + airline + ", arrival=" + arrival + ", departure=" + departure + ", arrivalTime=" + arrivalTime + ", departureTime=" + departureTime +",  status="
+				+ status + "]";
 	}
 
-	public Integer getId() {
-		return id;
+	public String getFlightNumber() {
+		return flightNumber;
 	}
 
-	public void setId(Integer id) {
-		this.id = id;
+	public void setFlightNumber(String flightNumber) {
+		this.flightNumber = flightNumber;
 	}
 
-	public String getName() {
-		return name;
+	public String getAirlineName() {
+		return airline;
 	}
 
-	public void setName(String name) {
-		this.name = name;
+	public void setAirlineName(String airline) {
+		this.airline = airline;
 	}
 
-	public String getDepartment() {
-		return department;
+	public String getArrival(){
+		return arrival;
 	}
 
-	public void setDepartment(String department) {
-		this.department = department;
+	public void setArrival(String arrival) {
+		this.arrival = arrival;
 	}
 
-	public Date getDob() {
-		return dob;
+	public String getDeparture() {
+		return departure;
 	}
 
-	public void setDob(Date dob) {
-		this.dob = dob;
+	public void setDeparture(String departure) {
+		this.departure = departure;
 	}
 
-	public String getGender() {
-		return gender;
+	public LocalDateTime getArrivalTime() {
+		return arrivalTime;
 	}
 
-	public void setGender(String gender) {
-		this.gender = gender;
+	public void setArrivalTime(LocalDateTime arrivalTime) {
+		this.arrivalTime = arrivalTime;
+	}
+
+	public LocalDateTime getDepartureTime() {
+		return departureTime;
+	}
+
+	public void setDepartureTime(LocalDateTime departureTime) {
+		this.departureTime = departureTime;
+	}
+
+	public String getStatus() {
+		return status;
+	}
+
+	public void setStatus(String status) {
+		this.status = status;
 	}
 
 }

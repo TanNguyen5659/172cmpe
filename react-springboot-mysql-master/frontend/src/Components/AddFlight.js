@@ -39,16 +39,22 @@ export default function AddFlight() {
   const classes = useStyles();
   const [firstLoad, setLoad] = React.useState(true);
 
-  const [dob, setSelectedDate] = React.useState("");
-  const [name, setName] = React.useState("");
-  const [department, setDepartment] = React.useState("");
-  const [gender, setGender] = React.useState("");
+  const [airline, setAirlineName] = React.useState("");
+  const [flightNumber, setFlightNumber] = React.useState("");
+  const [departure, setDeparture] = React.useState("");
+  const [arrival, setArrival] = React.useState("");
+  const [departureTime, setDepartureTime] = React.useState("");
+  const [arrivalTime, setArrivalTime] = React.useState("");
+  const [status, setStatus] = React.useState("");
 
-  const handleDateChange = event => {setSelectedDate(event.target.value);
+  const handleAirlineChange = event => {setAirlineName(event.target.value);
   console.log("check date: ",event.target.value)}
-  const handleNameChange = event => setName(event.target.value);
-  const handlDepartmentChange = event => setDepartment(event.target.value);
-  const handleGenderChange = event => setGender(event.target.value);
+  const handleFlightNumberChange = event => setFlightNumber(event.target.value);
+  const handleDepartureChange = event => setDeparture(event.target.value);
+  const handleArrivalChange = event => setArrival(event.target.value);
+  const handleDepartureTimeChange = event => setDepartureTime(event.target.value);
+  const handleArrivalTimeChange = event => setArrivalTime(event.target.value);
+  const handleStatusChange = event => setStatus(event.target.value);
 
   const [message, setMessage] = React.useState("Nothing saved in the session");
 
@@ -72,11 +78,15 @@ export default function AddFlight() {
   }
 
   const handleSubmit = variables => {
-    const toInput = { name, department, gender, dob };
+    const toInput = { airline, flightNumber, departure, arrival, departureTime, arrivalTime, status};
     sampleFunc(toInput);
-    setName("");
-    setDepartment("");
-    setGender("");
+    setAirlineName("");
+    setFlightNumber("");
+    setDeparture("");
+    setArrival("");
+    setDepartureTime("");
+    setArrivalTime("");
+    setStatus("");
   };
 
   if (firstLoad) {
@@ -101,25 +111,25 @@ export default function AddFlight() {
                 variant="outlined"
                 required
                 fullWidth
-                id="name"
-                value={name}
+                id="airline"
+                value={airline}
+                label="Airline"
+                name="airline"
+                autoComplete="airline"
+                onChange={handleAirlineChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                autoComplete="flightNumber"
+                name="flightNumber"
+                variant="outlined"
+                required
+                fullWidth
+                value={flightNumber}
+                id="flightNumber"
                 label="Flight Number"
-                name="name"
-                autoComplete="name"
-                onChange={handleNameChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                autoComplete="department"
-                name="department"
-                variant="outlined"
-                required
-                fullWidth
-                value={department}
-                id="department"
-                label="Destination"
-                onChange={handlDepartmentChange}
+                onChange={handleFlightNumberChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -127,12 +137,51 @@ export default function AddFlight() {
                 variant="outlined"
                 required
                 fullWidth
-                id="gender"
-                value={gender}
-                label="Time"
-                name="gender"
-                // autoComplete="gender"
-                onChange={handleGenderChange}
+                id="departure"
+                value={departure}
+                label="Departure"
+                name="departure"
+                autoComplete="departure"
+                onChange={handleDepartureChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="arrival"
+                value={arrival}
+                label="Arrival"
+                name="arrival"
+                autoComplete="arrival"
+                onChange={handleArrivalChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="departureTime"
+                value={departureTime}
+                label="Departure Time"
+                name="departureTime"
+                autoComplete="departureTime"
+                onChange={handleDepartureTimeChange}
+              />
+            </Grid>
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="arrivalTime"
+                value={departureTime}
+                label="Arrival Time"
+                name="arrivalTime"
+                autoComplete="arrivalTime"
+                onChange={handleArrivalTimeChange}
               />
             </Grid>
             <Grid item xs={12}>
@@ -141,29 +190,16 @@ export default function AddFlight() {
                 required
                 fullWidth
                 id="status"
-                value={gender}
+                value={status}
                 label="Status"
                 name="status"
-                // autoComplete="gender"
-                onChange={handleGenderChange}
-              />
-            </Grid>
-            <Grid item xs={12}>
-              <TextField
-                id="date"
-                label="Date"
-                type="date"
-                defaultValue="2020-11-20"
-                className={classes.textField}
-                InputLabelProps={{
-                  shrink: true
-                }}
-                onChange={handleDateChange}
+                autoComplete="status"
+                onChange={handleStatusChange}
               />
             </Grid>
           </Grid>
           <Button
-            // type="submit"
+            type="submit"
             fullWidth
             variant="contained"
             color="primary"
@@ -171,12 +207,12 @@ export default function AddFlight() {
             className={classes.submit}
             onClick={handleSubmit}
           >
-            Save
+            Search
           </Button>
 
           <Grid container justify="center">
             <Grid item>
-              <Link to="/view">View Flight Records</Link>
+              <Link to="/view">Flight Schedules</Link>
             </Grid>
           </Grid>
         </form>
