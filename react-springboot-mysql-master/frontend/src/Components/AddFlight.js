@@ -177,7 +177,7 @@ export default function AddFlight() {
                 required
                 fullWidth
                 id="arrivalTime"
-                value={departureTime}
+                value={arrivalTime}
                 label="Arrival Time"
                 name="arrivalTime"
                 autoComplete="arrivalTime"
@@ -203,7 +203,7 @@ export default function AddFlight() {
             fullWidth
             variant="contained"
             color="primary"
-            preventDefault
+            preventdefault="true"
             className={classes.submit}
             onClick={handleSubmit}
           >
