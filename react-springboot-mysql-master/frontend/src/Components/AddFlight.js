@@ -102,7 +102,7 @@ export default function AddFlight() {
           <GroupIcon />
         </Avatar>
         <Typography component="h1" variant="h5">
-          Flight Directory
+          Modify Flight Data
         </Typography>
         <form className={classes.form} noValidate>
           <Grid container spacing={2}>
@@ -214,7 +214,7 @@ export default function AddFlight() {
 
           <Grid container justify="center">
             <Grid item>
-              <Link to="/view">Modify the Airport Database</Link>
+              <Link to="/view">View Flight Data</Link>
             </Grid>
           </Grid>
         </form>
