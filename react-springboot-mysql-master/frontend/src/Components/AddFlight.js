@@ -132,7 +132,7 @@ export default function AddFlight() {
                 onChange={handleFlightNumberChange}
               />
             </Grid>
-            
+
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -214,7 +214,7 @@ export default function AddFlight() {
 
           <Grid container justify="center">
             <Grid item>
-              <Link to="/view">Flight Schedules</Link>
+              <Link to="/view">Modify the Airport Database</Link>
             </Grid>
           </Grid>
         </form>
