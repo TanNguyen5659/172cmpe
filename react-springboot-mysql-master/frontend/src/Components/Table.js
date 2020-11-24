@@ -93,7 +93,7 @@ export default function SimpleTable() {
             </TableHead>
             <TableBody>
               {data?.map(row => (
-                <TableRow key={row.name}>
+                <TableRow key={row.id}>
                   <TableCell align="center">{row.airline}</TableCell>
                   <TableCell align="center">{row.flightNumber}</TableCell>
                   <TableCell align="center">{row.departure}</TableCell>
