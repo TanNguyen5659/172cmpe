@@ -69,7 +69,7 @@ export default function SimpleTable() {
         <GroupIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        Flight Schedules
+        SFO Flight Schedule on November 30, 2020
       </Typography>
 
       {isLoading ? (
@@ -84,8 +84,8 @@ export default function SimpleTable() {
               <TableRow>
                 <TableCell align="center">Airline</TableCell>
                 <TableCell align="center">Flight Number</TableCell>
-                <TableCell align="center">Departure</TableCell>
-                <TableCell align="center">Arrival</TableCell>
+                <TableCell align="center">Destination</TableCell>
+                <TableCell align="center">Gate</TableCell>
                 <TableCell align="center">Departure Time</TableCell>
                 <TableCell align="center">Arrival Time</TableCell>
                 <TableCell align="center">Status</TableCell>
@@ -96,8 +96,8 @@ export default function SimpleTable() {
                 <TableRow key={row.id}>
                   <TableCell align="center">{row.airline}</TableCell>
                   <TableCell align="center">{row.flightNumber}</TableCell>
-                  <TableCell align="center">{row.departure}</TableCell>
                   <TableCell align="center">{row.arrival}</TableCell>
+                  <TableCell align="center">{row.departure}</TableCell>
                   <TableCell align="center">{row.departureTime}</TableCell>
                   <TableCell align="center">{row.arrivalTime}</TableCell>
                   <TableCell align="center">{row.status}</TableCell>
