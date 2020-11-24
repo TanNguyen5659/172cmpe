@@ -96,8 +96,8 @@ export default function SimpleTable() {
                 <TableRow key={row.id}>
                   <TableCell align="center">{row.airline}</TableCell>
                   <TableCell align="center">{row.flightNumber}</TableCell>
-                  <TableCell align="center">{row.arrival}</TableCell>
-                  <TableCell align="center">{row.departure}</TableCell>
+                  <TableCell align="center">{row.destination}</TableCell>
+                  <TableCell align="center">{row.gate}</TableCell>
                   <TableCell align="center">{row.departureTime}</TableCell>
                   <TableCell align="center">{row.arrivalTime}</TableCell>
                   <TableCell align="center">{row.status}</TableCell>

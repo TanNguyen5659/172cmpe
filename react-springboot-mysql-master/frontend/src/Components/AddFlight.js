@@ -41,8 +41,8 @@ export default function AddFlight() {
 
   const [airline, setAirlineName] = React.useState("");
   const [flightNumber, setFlightNumber] = React.useState("");
-  const [departure, setDeparture] = React.useState("");
-  const [arrival, setArrival] = React.useState("");
+  const [gate, setGate] = React.useState("");
+  const [destination, setDestination] = React.useState("");
   const [departureTime, setDepartureTime] = React.useState("");
   const [arrivalTime, setArrivalTime] = React.useState("");
   const [status, setStatus] = React.useState("");
@@ -50,8 +50,8 @@ export default function AddFlight() {
   const handleAirlineChange = event => {setAirlineName(event.target.value);
   console.log("check date: ",event.target.value)}
   const handleFlightNumberChange = event => setFlightNumber(event.target.value);
-  const handleDepartureChange = event => setDeparture(event.target.value);
-  const handleArrivalChange = event => setArrival(event.target.value);
+  const handleGateChange = event => setGate(event.target.value);
+  const handleDestinationChange = event => setDestination(event.target.value);
   const handleDepartureTimeChange = event => setDepartureTime(event.target.value);
   const handleArrivalTimeChange = event => setArrivalTime(event.target.value);
   const handleStatusChange = event => setStatus(event.target.value);
@@ -78,12 +78,12 @@ export default function AddFlight() {
   }
 
   const handleSubmit = variables => {
-    const toInput = { airline, flightNumber, departure, arrival, departureTime, arrivalTime, status};
+    const toInput = { airline, flightNumber, gate, destination, departureTime, arrivalTime, status};
     sampleFunc(toInput);
     setAirlineName("");
     setFlightNumber("");
-    setDeparture("");
-    setArrival("");
+    setGate("");
+    setDestination("");
     setDepartureTime("");
     setArrivalTime("");
     setStatus("");
@@ -138,12 +138,12 @@ export default function AddFlight() {
                 variant="outlined"
                 required
                 fullWidth
-                id="arrival"
-                value={arrival}
+                id="destination"
+                value={destination}
                 label="Destination"
-                name="arrival"
-                autoComplete="arrival"
-                onChange={handleArrivalChange}
+                name="destination"
+                autoComplete="destination"
+                onChange={handleDestinationChange}
               />
             </Grid>
 
@@ -152,12 +152,12 @@ export default function AddFlight() {
                 variant="outlined"
                 required
                 fullWidth
-                id="departure"
-                value={departure}
+                id="gate"
+                value={gate}
                 label="Gate"
-                name="departure"
-                autoComplete="departure"
-                onChange={handleDepartureChange}
+                name="gate"
+                autoComplete="gate"
+                onChange={handleGateChange}
               />
             </Grid>
             <Grid item xs={12}>
