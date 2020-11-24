@@ -1,6 +1,6 @@
 package com.mukundmadhav.springboot.springboot.modal;
 
-import java.time.LocalDateTime;
+
 
 import javax.persistence.Column;
 import javax.persistence.Entity;
@@ -15,6 +15,10 @@ public class Flight {
 
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
+
+
+	@Column
+	private Integer id;
 	@Column
 	private String flightNumber; //flight number
 
@@ -28,19 +32,25 @@ public class Flight {
 	private String departure;
 
 	@Column
-	private LocalDateTime arrivalTime;
+	private String  arrivalTime;
 
 	@Column
-	private LocalDateTime departureTime;
+	private String departureTime;
 
 	@Column
 	private String status;
 
 	@Override
 	public String toString() {
-		return "Flight [flightNumber=" + flightNumber + ", airline=" + airline + ", arrival=" + arrival + ", departure=" + departure + ", arrivalTime=" + arrivalTime + ", departureTime=" + departureTime +",  status="
+		return "Flight [id=	" + id + ", flightNumber=" + flightNumber + ", airline=" + airline + ", arrival=" + arrival + ", departure=" + departure + ", arrivalTime=" + arrivalTime + ", departureTime=" + departureTime +",  status="
 				+ status + "]";
 	}
+
+	public Integer getId() {
+		return id;}
+
+	public void setId(Integer id) {
+		this.id = id;}
 
 	public String getFlightNumber() {
 		return flightNumber;
@@ -50,11 +60,11 @@ public class Flight {
 		this.flightNumber = flightNumber;
 	}
 
-	public String getAirlineName() {
+	public String getAirline() {
 		return airline;
 	}
 
-	public void setAirlineName(String airline) {
+	public void setAirline(String airline) {
 		this.airline = airline;
 	}
 
@@ -74,19 +84,19 @@ public class Flight {
 		this.departure = departure;
 	}
 
-	public LocalDateTime getArrivalTime() {
+	public String getArrivalTime() {
 		return arrivalTime;
 	}
 
-	public void setArrivalTime(LocalDateTime arrivalTime) {
+	public void setArrivalTime(String arrivalTime) {
 		this.arrivalTime = arrivalTime;
 	}
 
-	public LocalDateTime getDepartureTime() {
+	public String getDepartureTime() {
 		return departureTime;
 	}
 
-	public void setDepartureTime(LocalDateTime departureTime) {
+	public void setDepartureTime(String departureTime) {
 		this.departureTime = departureTime;
 	}
 
