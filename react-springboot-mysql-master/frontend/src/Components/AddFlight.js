@@ -74,7 +74,7 @@ export default function AddFlight() {
     });
     let body = await response.json();
     console.log(body.id);
-    setMessage(body.id ? "Data sucessfully updated" : "Data updation failed");
+    setMessage(body.id ? "Data sucessfully updated" : "Data failed to update");
   }
 
   const handleSubmit = variables => {
@@ -132,19 +132,7 @@ export default function AddFlight() {
                 onChange={handleFlightNumberChange}
               />
             </Grid>
-            <Grid item xs={12}>
-              <TextField
-                variant="outlined"
-                required
-                fullWidth
-                id="departure"
-                value={departure}
-                label="Departure"
-                name="departure"
-                autoComplete="departure"
-                onChange={handleDepartureChange}
-              />
-            </Grid>
+            
             <Grid item xs={12}>
               <TextField
                 variant="outlined"
@@ -152,10 +140,24 @@ export default function AddFlight() {
                 fullWidth
                 id="arrival"
                 value={arrival}
-                label="Arrival"
+                label="Destination"
                 name="arrival"
                 autoComplete="arrival"
                 onChange={handleArrivalChange}
+              />
+            </Grid>
+
+            <Grid item xs={12}>
+              <TextField
+                variant="outlined"
+                required
+                fullWidth
+                id="departure"
+                value={departure}
+                label="Gate"
+                name="departure"
+                autoComplete="departure"
+                onChange={handleDepartureChange}
               />
             </Grid>
             <Grid item xs={12}>
