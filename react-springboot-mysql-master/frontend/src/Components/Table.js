@@ -57,7 +57,7 @@ export default function SimpleTable() {
   const [firstLoad, setLoad] = React.useState(true);
 
   const [dataNum, setDataNum] = React.useState("");
-  const [gate, setGate] = React.useState("");
+  const [airline, setAirline] = React.useState("");
   const [desti, setDestination] = React.useState("");
   const [searchArr, setArr] = React.useState([]);
   const [dataSearch, setChange] = React.useState({
@@ -77,33 +77,33 @@ export default function SimpleTable() {
   //todo: this 3 functions get data from search boxes
   const searchFlightNumber = (event) => setDataNum(event.target.value);
   const searchDestination = (event) => setDestination(event.target.value);
-  const searchGate = (event) => setGate(event.target.value);
+  const searchAirline = (event) => setAirline(event.target.value);
 
   //todo this function run when people click search
   function searchClick() {
     let temp = [];
-    if (dataNum !== "" && gate !== "" && desti !== "") {
+    if (dataNum !== "" && airline !== "" && desti !== "") {
       data.map((x) => {
         if (
           x.flightNumber === dataNum &&
-          x.gate === gate &&
+          x.airline === airline &&
           x.destination === desti
         ) {
           temp.push(x);
           console.log(x);
         }
       });
-    } else if (dataNum !== "" && gate !== "") {
+    } else if (dataNum !== "" && airline !== "") {
       data.map((x) => {
-        if (x.flightNumber === dataNum && x.gate === gate) {
+        if (x.flightNumber === dataNum && x.airline === airline) {
           temp.push(x);
           console.log(x);
         }
       });
-    } else if (gate !== "" && desti !== "") {
+    } else if (airline !== "" && desti !== "") {
       console.log("Got here");
       data.map((x) => {
-        if (x.gate === gate && x.destination === desti) {
+        if (x.airline === airline && x.destination === desti) {
           temp.push(x);
           console.log(x);
         }
@@ -124,9 +124,9 @@ export default function SimpleTable() {
         }
         console.log("temp: ", temp);
       });
-    } else if (gate !== "") {
+    } else if (airline !== "") {
       data.map((x) => {
-        if (x.gate === gate) {
+        if (x.airline === airline) {
           temp.push(x);
           console.log(x);
         }
@@ -144,7 +144,7 @@ export default function SimpleTable() {
     setArr(temp);
     setChange({
       data1: dataNum,
-      data2: gate,
+      data2: airline,
       data3: desti,
     });
   }
@@ -210,9 +210,9 @@ export default function SimpleTable() {
         />
         <TextField
           id="outlined-basic"
-          label="Gate"
+          label="Airline"
           variant="outlined"
-          onChange={searchGate}
+          onChange={searchAirline}
         />
         <Button
           variant="contained"
