@@ -10,7 +10,7 @@ import javax.persistence.Id;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tb_emp")
+@Table(name = "flight_data")
 public class Flight {
 
 	@Id
@@ -36,13 +36,18 @@ public class Flight {
 
 	@Column
 	private String departureTime;
+	@Column
+	private String destination;
+
+	@Column
+	private String gate;
 
 	@Column
 	private String status;
 
 	@Override
 	public String toString() {
-		return "Flight [id=	" + id + ", flightNumber=" + flightNumber + ", airline=" + airline + ", arrival=" + arrival + ", departure=" + departure + ", arrivalTime=" + arrivalTime + ", departureTime=" + departureTime +",  status="
+		return "Flight [id=	" + id + ", flightNumber=" + flightNumber + ", airline=" + airline + ", arrival=" + arrival + ", gate=" + gate +", destination=" + destination+ ", departure=" + departure + ", arrivalTime=" + arrivalTime + ", departureTime=" + departureTime +",  status="
 				+ status + "]";
 	}
 
@@ -54,6 +59,22 @@ public class Flight {
 
 	public String getFlightNumber() {
 		return flightNumber;
+	}
+
+	public void setDestinaton(String destination) {
+		this.destination = destination;
+	}
+
+	public String getDestination() {
+		return destination;
+	}
+
+	public void setGate(String gate) {
+		this.gate = gate;
+	}
+
+	public String getGate() {
+		return gate;
 	}
 
 	public void setFlightNumber(String flightNumber) {
