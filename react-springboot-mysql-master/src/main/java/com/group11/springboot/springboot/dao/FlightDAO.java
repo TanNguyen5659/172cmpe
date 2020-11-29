@@ -1,8 +1,8 @@
-package com.mukundmadhav.springboot.springboot.dao;
+package com.group11.springboot.springboot.dao;
 
 import java.util.List;
 
-import com.mukundmadhav.springboot.springboot.modal.Flight;
+import com.group11.springboot.springboot.modal.Flight;
 
 public interface FlightDAO {
 	

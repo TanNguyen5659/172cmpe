@@ -1,4 +1,4 @@
-package com.mukundmadhav.springboot.springboot.controller;
+package com.group11.springboot.springboot.controller;
 
 import java.util.List;
 
@@ -12,8 +12,8 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.mukundmadhav.springboot.springboot.service.FlightService;
-import com.mukundmadhav.springboot.springboot.modal.Flight;
+import com.group11.springboot.springboot.service.FlightService;
+import com.group11.springboot.springboot.modal.Flight;
 
 @RestController
 @RequestMapping("/api")

@@ -1,4 +1,4 @@
-package com.mukundmadhav.springboot.springboot;
+package com.group11.springboot.springboot;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

@@ -1,4 +1,4 @@
-package com.mukundmadhav.springboot.springboot.modal;
+package com.group11.springboot.springboot.modal;
 
 
 

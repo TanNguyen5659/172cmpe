@@ -1,4 +1,4 @@
-package com.mukundmadhav.springboot.springboot.service;
+package com.group11.springboot.springboot.service;
 
 import java.util.List;
 
@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import com.mukundmadhav.springboot.springboot.dao.FlightDAO;
-import com.mukundmadhav.springboot.springboot.modal.Flight;
+import com.group11.springboot.springboot.dao.FlightDAO;
+import com.group11.springboot.springboot.modal.Flight;
 
 @Service
 public class FlightServiceImp implements FlightService {

@@ -1,4 +1,4 @@
-package com.mukundmadhav.springboot.springboot.dao;
+package com.group11.springboot.springboot.dao;
 
 import java.util.List;
 
@@ -9,7 +9,7 @@ import org.hibernate.Session;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 
-import com.mukundmadhav.springboot.springboot.modal.Flight;
+import com.group11.springboot.springboot.modal.Flight;
 
 @Repository
 public class FlightDAOImp implements FlightDAO {
