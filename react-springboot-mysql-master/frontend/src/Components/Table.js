@@ -8,13 +8,14 @@ import TableHead from "@material-ui/core/TableHead";
 import TableRow from "@material-ui/core/TableRow";
 import Paper from "@material-ui/core/Paper";
 import Avatar from "@material-ui/core/Avatar";
-import { Link } from "react-router-dom";
+// import { Link } from "react-router-dom";
 import Typography from "@material-ui/core/Typography";
 import CircularProgress from "@material-ui/core/CircularProgress";
 // import Grid from "@material-ui/core/Grid";
 import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import FlightIcon from "@material-ui/icons/Flight";
+import { useHistory } from "react-router-dom";
 
 const useStyles = makeStyles((theme) => ({
   table: {
@@ -66,6 +67,9 @@ export default function SimpleTable() {
     data3: "",
   });
   let isLoading = true;
+  let history = useHistory();
+  const goAdd = () => history.push("/addFlight");
+  const goAnalytic = () => history.push("/analytic");
 
   async function sampleFunc() {
     let response = await fetch("/api/flight");
@@ -185,14 +189,42 @@ export default function SimpleTable() {
   }
 
   if (displayData.length > 0) isLoading = false;
+  let today = new Date().toLocaleDateString();
 
   return (
     <div className={classes.paper}>
+      <div className="buttonBar">
+        <div className="inlineBlock">
+          <Button
+            variant="contained"
+            color="secondary"
+            className=""
+            onClick={goAdd}
+          >
+            Add Flight
+          </Button>
+        </div>
+        <div className="inlineBlock makeSpace">
+          <Button
+            variant="contained"
+            color="secondary"
+            className=""
+            onClick={goAnalytic}
+          >
+            Analytics
+          </Button>
+        </div>
+      </div>
+
+      {/* <Link className={classes.link} to="/addFlight">
+        {" "}
+        <Typography align="right"> Modify Data</Typography>{" "}
+      </Link> */}
       <Avatar className={classes.avatar}>
         <FlightIcon />
       </Avatar>
       <Typography component="h1" variant="h5">
-        SFO Flight Schedule on November 30, 2020
+        SFO Flight Schedule on {today}
       </Typography>
 
       <form className={classes.root} noValidate autoComplete="off">
@@ -266,10 +298,6 @@ export default function SimpleTable() {
           </Table>
         </TableContainer>
       )}
-      <Link className={classes.link} to="/">
-        {" "}
-        <Typography align="left">&#x2190; Search</Typography>{" "}
-      </Link>
     </div>
   );
 }

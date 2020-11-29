@@ -10,29 +10,29 @@ import Typography from "@material-ui/core/Typography";
 import { makeStyles } from "@material-ui/core/styles";
 import Container from "@material-ui/core/Container";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles((theme) => ({
   paper: {
     marginTop: theme.spacing(7),
     display: "flex",
     flexDirection: "column",
-    alignItems: "center"
+    alignItems: "center",
   },
   avatar: {
     margin: theme.spacing(1),
-    backgroundColor: theme.palette.secondary.main
+    backgroundColor: theme.palette.secondary.main,
   },
   form: {
     width: "100%", // Fix IE 11 issue.
-    marginTop: theme.spacing(3)
+    marginTop: theme.spacing(3),
   },
   submit: {
-    margin: theme.spacing(3, 0, 2)
+    margin: theme.spacing(3, 0, 2),
   },
   textField: {
     marginLeft: theme.spacing(1),
     marginRight: theme.spacing(1),
-    width: "100%"
-  }
+    width: "100%",
+  },
 }));
 
 export default function AddFlight() {
@@ -47,14 +47,18 @@ export default function AddFlight() {
   const [arrivalTime, setArrivalTime] = React.useState("");
   const [status, setStatus] = React.useState("");
 
-  const handleAirlineChange = event => {setAirlineName(event.target.value);
-  console.log("check date: ",event.target.value)}
-  const handleFlightNumberChange = event => setFlightNumber(event.target.value);
-  const handleGateChange = event => setGate(event.target.value);
-  const handleDestinationChange = event => setDestination(event.target.value);
-  const handleDepartureTimeChange = event => setDepartureTime(event.target.value);
-  const handleArrivalTimeChange = event => setArrivalTime(event.target.value);
-  const handleStatusChange = event => setStatus(event.target.value);
+  const handleAirlineChange = (event) => {
+    setAirlineName(event.target.value);
+    console.log("check date: ", event.target.value);
+  };
+  const handleFlightNumberChange = (event) =>
+    setFlightNumber(event.target.value);
+  const handleGateChange = (event) => setGate(event.target.value);
+  const handleDestinationChange = (event) => setDestination(event.target.value);
+  const handleDepartureTimeChange = (event) =>
+    setDepartureTime(event.target.value);
+  const handleArrivalTimeChange = (event) => setArrivalTime(event.target.value);
+  const handleStatusChange = (event) => setStatus(event.target.value);
 
   const [message, setMessage] = React.useState("Nothing saved in the session");
 
@@ -65,20 +69,28 @@ export default function AddFlight() {
       cache: "no-cache", // *default, no-cache, reload, force-cache, only-if-cached
       credentials: "same-origin", // include, *same-origin, omit
       headers: {
-        "Content-Type": "application/json"
+        "Content-Type": "application/json",
         // 'Content-Type': 'application/x-www-form-urlencoded',
       },
       redirect: "follow", // manual, *follow, error
       referrerPolicy: "no-referrer", // no-referrer, *client
-      body: JSON.stringify(toInput) // body data type must match "Content-Type" header
+      body: JSON.stringify(toInput), // body data type must match "Content-Type" header
     });
     let body = await response.json();
     console.log(body.id);
     setMessage(body.id ? "Data sucessfully updated" : "Data failed to update");
   }
 
-  const handleSubmit = variables => {
-    const toInput = { airline, flightNumber, gate, destination, departureTime, arrivalTime, status};
+  const handleSubmit = (variables) => {
+    const toInput = {
+      airline,
+      flightNumber,
+      gate,
+      destination,
+      departureTime,
+      arrivalTime,
+      status,
+    };
     sampleFunc(toInput);
     setAirlineName("");
     setFlightNumber("");
@@ -214,7 +226,7 @@ export default function AddFlight() {
 
           <Grid container justify="center">
             <Grid item>
-              <Link to="/view">View Flight Data</Link>
+              <Link to="/">View Flight Data</Link>
             </Grid>
           </Grid>
         </form>
