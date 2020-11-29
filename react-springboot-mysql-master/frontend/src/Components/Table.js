@@ -1,4 +1,4 @@
-import React from "react";
+import React,{ useContext } from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import Table from "@material-ui/core/Table";
 import TableBody from "@material-ui/core/TableBody";
@@ -16,7 +16,7 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import FlightIcon from "@material-ui/icons/Flight";
 import { useHistory } from "react-router-dom";
-
+import someContexts from "./makeContext";
 const useStyles = makeStyles((theme) => ({
   table: {
     minWidth: 600,
@@ -53,7 +53,7 @@ const useStyles = makeStyles((theme) => ({
 
 export default function SimpleTable() {
   const classes = useStyles();
-
+  const context = useContext(someContexts);
   const [data, upDateData] = React.useState([]);
   const [firstLoad, setLoad] = React.useState(true);
 
@@ -76,6 +76,27 @@ export default function SimpleTable() {
     let body = await response.json();
     upDateData(body);
     console.log(body);
+    let numArr=[];
+    let hourArr=["00","01","02","03","04","05","06","07","08","09","10","11","12","13","14","15","16","17","18","19","20","21","22","23"]
+
+    for(var i =0;i<hourArr.length;i++){
+      var count=0;
+      body.map((x)=>{
+        let depart=x.departureTime;
+        // console.log(depart.slice(0,2));
+        // if(depart.slice(0,1)==="0"){
+        //   depart=depart.slice(1,2);
+        // }else{
+        //   depart=depart.slice(0,2);
+        // }
+        if(hourArr[i]===(depart.slice(0,2))){
+          count+=1;
+        }
+      })
+      numArr.push(count);
+    }
+    console.log(numArr);
+    context.setNumber(numArr);
   }
 
   //todo: this 3 functions get data from search boxes

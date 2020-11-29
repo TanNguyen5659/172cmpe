@@ -1,10 +1,12 @@
-import React from "react";
+import React, { useContext } from "react";
 // import Chart from 'react-apexcharts'
 import ReactApexChart from "react-apexcharts";
 import Button from "@material-ui/core/Button";
 import { useHistory } from "react-router-dom";
+import someContexts from "./makeContext";
 
 export default function Analytic() {
+  const context = useContext(someContexts);
   let history = useHistory();
   const goAdd = () => history.push("/addFlight");
   const goAnalytic = () => history.push("/analytic");
@@ -12,7 +14,7 @@ export default function Analytic() {
   const series = [
     {
       name: "Numbers of Flights",
-      data: [10, 41, 35, 51, 49, 62, 69, 91, 148],
+      data: context.numberFlight,
     },
   ];
 
@@ -66,7 +68,7 @@ export default function Analytic() {
         "4",
         "5",
         "6",
-        "7",
+        "7","8",
         "9",
         "10",
         "11",
