@@ -1,4 +1,4 @@
-package com.mukundmadhav.springboot.springboot;
+package com.group11.springboot.springboot;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
