@@ -1,23 +1,29 @@
 
-# React, Spring Boot and MySQL webapp!
+# CMPE 172 Group 11 Project - SJSU
 
-Hey there! This app is an example application for anyone looking for a web app linking the backend capabilities of Spring Boot (with Hibernate) to excellent frontend offered by React. 
+Course: Enterprise Software - CMPE172/Fall 2020
 
-![Application Home page](https://cdn-images-1.medium.com/max/1000/1*H4KTKqkilycIb1ebhvN85w.png)
+Team members: Tan Nguyen, Toan Tran, Khoa Pham
+
+Flight management and analysis system:
+
+ + Three tier architecture web app
+ 
+ + Analyze flight data at SFO on a specific day (mock up database)
+ 
+ + Analytics tool to graph the peak time flights
+  
+ + Offer users the ability to query data according to: flight number, Airline, and destination.
+ 
+Data could later be used by airlines to organize flight time, reschedules the number of flights to destinations to optimize their resources.
+
+Built by using React.js, Springboot and RDS database
+
+![Application Home page]()
 
 
-![List of all data in our React app](https://cdn-images-1.medium.com/max/1000/1*h8A68kGQpM6QoQYOCqux6g.png)
+![List of all data in our React app]()
 
-If you would like to follow on the tutorial for the app you can visit the article on medium: [How to build and deploy React app with Spring Boot and MySQL server](https://medium.com/@mukundmadhav/build-and-deploy-react-app-with-spring-boot-and-mysql-6f888eb0c600).
-
-## The purpose of the webapp
-
-The purpose of the app was to learn as to : 
-
- 1. How to build Spring Boot apps?
- 2. How to build React apps?
- 3. How to encapsulate the backend to the frontend?
- 4. How to deploy React and Spring Boot along with MySQL DB in my server?
 
 ### Installation
 
@@ -30,8 +36,3 @@ $ java -jar target/springboot-0.0.1-SNAPSHOT.jar
 ```
 
 
-####  PostScript
-
-I hope this app gives some insight on how to compile the backend and the frontend into a single executable file making deployment a breeze. 
-
-Happy coding 😃
