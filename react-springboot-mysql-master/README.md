@@ -32,7 +32,7 @@ You'll need maven, npm and JAVA pre-installed, which most probably you'll alread
 ```sh
 $ mvn clean
 $ mvn package
-$ java -jar target/springboot-0.0.1-SNAPSHOT.jar
+$ java -jar src/springboot-0.0.1-SNAPSHOT.jar
 ```
 
 
