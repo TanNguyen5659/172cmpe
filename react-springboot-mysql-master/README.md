@@ -19,10 +19,10 @@ Data could later be used by airlines to organize flight time, reschedules the nu
 
 Built by using React.js, Springboot and RDS database
 
-![Application Home page](https://cdn-images-1.medium.com/max/1000/1*H4KTKqkilycIb1ebhvN85w.png)
+![Application Home page]()
 
 
-![List of all data in our React app](https://cdn-images-1.medium.com/max/1000/1*h8A68kGQpM6QoQYOCqux6g.png)
+![List of all data in our React app]()
 
 
 ### Installation
