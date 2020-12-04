@@ -23,6 +23,8 @@ Built by using React.js, Springboot and RDS database
 
 ![Add flight page](https://i.ibb.co/rm2jZjY/Screen-Shot-2020-12-03-at-8-48-08-PM.png])
 
+![Graphing page](https://i.ibb.co/FDKb0TV/Screen-Shot-2020-12-03-at-8-48-19-PM.png)
+
 
 ### How to run the project
 
