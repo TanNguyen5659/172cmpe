@@ -20,12 +20,12 @@ Data could later be used by airlines to organize flight time, reschedules the nu
 Built by using React.js, Springboot and RDS database
 
 ![Application Home page]()
-
+[url=https://ibb.co/58StP3q][img]https://i.ibb.co/hW4hSNp/Screen-Shot-2020-12-03-at-8-48-04-PM.png[/img][/url]
 
 ![List of all data in our React app]()
 
 
-### Installation
+### How to run the project
 
 You'll need maven, npm and JAVA pre-installed, which most probably you'll already have.  To run the application, run the following commands from the console.
 
@@ -34,5 +34,9 @@ $ mvn clean
 $ mvn package
 $ java -jar src/springboot-0.0.1-SNAPSHOT.jar
 ```
-
+Also, I have initialized the .jar file if you want to quick run. Run the terminal on the folder, and run the following command:
+```sh
+$ java -jar springboot-0.0.1-SNAPSHOT.jar
+```
+After done, try to access localhost:8080
 
