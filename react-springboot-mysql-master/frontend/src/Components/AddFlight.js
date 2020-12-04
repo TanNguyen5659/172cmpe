@@ -221,7 +221,7 @@ export default function AddFlight() {
             className={classes.submit}
             onClick={handleSubmit}
           >
-            Search
+            Add Flight
           </Button>
 
           <Grid container justify="center">
