@@ -17,7 +17,9 @@ Flight management and analysis system:
  
 Data could later be used by airlines to organize flight time, reschedules the number of flights to destinations to optimize their resources.
 
-Built by using React.js, Springboot and RDS database
+Built by using React.js, Springboot and RDS database.
+
+Screenshots of the webapp:
 
 ![Application Home page](https://i.ibb.co/hW4hSNp/Screen-Shot-2020-12-03-at-8-48-04-PM.png)
 
